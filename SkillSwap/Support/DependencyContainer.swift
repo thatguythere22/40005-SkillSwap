@@ -23,16 +23,9 @@ final class DependencyContainer {
             self.repository = repository
         } else {
             let coreDataRepository = CoreDataSkillSwapRepository()
-            DemoDataSeeder(repository: coreDataRepository)
-                .seedIfNeeded(currentMemberID: resolvedIdentity.memberID)
-
+            DemoDataSeeder(repository: coreDataRepository).seedIfNeeded(currentMemberID: resolvedIdentity.memberID)
             let widgetPublisher = SkillSwapWidgetPublisher()
-
-            widgetPublisher.publish(
-                repository: coreDataRepository,
-                memberID: resolvedIdentity.memberID
-            )
-
+            widgetPublisher.publish(repository: coreDataRepository, memberID: resolvedIdentity.memberID)
             self.repository = WidgetPublishingSkillSwapRepository(
                 base: coreDataRepository,
                 memberID: resolvedIdentity.memberID,

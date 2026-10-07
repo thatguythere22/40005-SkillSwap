@@ -20,32 +20,14 @@ final class CoreDataSkillSwapRepository: SkillSwapRepository {
         }
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
-        let entities = try context.fetch(request)
-        var results: [SkillRequest] = []
-
-        for entity in entities {
-            if let mapped = Self.mapRequest(entity) {
-                results.append(mapped)
-            }
-        }
-
-        return results
+        return try context.fetch(request).compactMap(Self.mapRequest)
     }
 
     func fetchRequests(ownerID: String) throws -> [SkillRequest] {
         let request = NSFetchRequest<ExchangeRequestEntity>(entityName: "ExchangeRequestEntity")
         request.predicate = NSPredicate(format: "ownerID == %@", ownerID)
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
-        let entities = try context.fetch(request)
-        var results: [SkillRequest] = []
-
-        for entity in entities {
-            if let mapped = Self.mapRequest(entity) {
-                results.append(mapped)
-            }
-        }
-
-        return results
+        return try context.fetch(request).compactMap(Self.mapRequest)
     }
 
     func fetchRequest(id: UUID) throws -> SkillRequest? {
@@ -69,32 +51,14 @@ final class CoreDataSkillSwapRepository: SkillSwapRepository {
         let request = NSFetchRequest<ExchangeOfferEntity>(entityName: "ExchangeOfferEntity")
         request.predicate = NSPredicate(format: "requestID == %@", requestID as NSUUID)
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
-        let entities = try context.fetch(request)
-        var results: [SkillOffer] = []
-
-        for entity in entities {
-            if let mapped = Self.mapOffer(entity) {
-                results.append(mapped)
-            }
-        }
-
-        return results
+        return try context.fetch(request).compactMap(Self.mapOffer)
     }
 
     func fetchIncomingOffers(requestOwnerID: String) throws -> [SkillOffer] {
         let request = NSFetchRequest<ExchangeOfferEntity>(entityName: "ExchangeOfferEntity")
         request.predicate = NSPredicate(format: "requestOwnerID == %@", requestOwnerID)
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
-        let entities = try context.fetch(request)
-        var results: [SkillOffer] = []
-
-        for entity in entities {
-            if let mapped = Self.mapOffer(entity) {
-                results.append(mapped)
-            }
-        }
-
-        return results
+        return try context.fetch(request).compactMap(Self.mapOffer)
     }
 
     func saveOffer(_ offer: SkillOffer) throws {

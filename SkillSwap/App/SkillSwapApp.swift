@@ -1,10 +1,3 @@
-//
-//  SkillSwapApp.swift
-//  SkillSwap
-//
-//  Created by Zade Elsaddik on 7/10/2026.
-//
-
 import SwiftUI
 
 @main

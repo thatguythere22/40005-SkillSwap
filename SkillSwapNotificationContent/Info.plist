@@ -17,11 +17,22 @@
     <key>CFBundleVersion</key>
     <string>$(CURRENT_PROJECT_VERSION)</string>
     <key>CFBundleDisplayName</key>
-    <string>SkillSwap Widget</string>
+    <string>SkillSwap Session</string>
     <key>NSExtension</key>
     <dict>
+        <key>NSExtensionAttributes</key>
+        <dict>
+            <key>UNNotificationExtensionCategory</key>
+            <string>SKILLSWAP_SESSION_REMINDER</string>
+            <key>UNNotificationExtensionDefaultContentHidden</key>
+            <false/>
+            <key>UNNotificationExtensionInitialContentSizeRatio</key>
+            <real>0.55</real>
+        </dict>
         <key>NSExtensionPointIdentifier</key>
-        <string>com.apple.widgetkit-extension</string>
+        <string>com.apple.usernotifications.content-extension</string>
+        <key>NSExtensionPrincipalClass</key>
+        <string>$(PRODUCT_MODULE_NAME).NotificationViewController</string>
     </dict>
 </dict>
 </plist>

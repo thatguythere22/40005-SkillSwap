@@ -3,7 +3,7 @@ import WidgetKit
 
 /// Writes a compact SkillSwap snapshot to the App Group so the widget can show useful information without opening Core Data directly.
 struct SkillSwapWidgetPublisher {
-    static let appGroupIdentifier = "group.com.zadeelsaddik.SkillSwap"
+    static let appGroupIdentifier = "group.com.zadeelsaddik.SkillSwapA3"
     static let widgetKind = "SkillSwapWidget"
 
     private enum Keys {

@@ -2,7 +2,7 @@ import SwiftUI
 import WidgetKit
 
 private enum SkillSwapWidgetShared {
-    static let appGroupIdentifier = "group.com.zadeelsaddik.SkillSwap"
+    static let appGroupIdentifier = "group.com.zadeelsaddik.SkillSwapA3"
     static let widgetKind = "SkillSwapWidget"
 
     enum Keys {
@@ -154,5 +154,3 @@ struct SkillSwapWidgetBundle: WidgetBundle {
         SkillSwapWidget()
     }
 }
-
-

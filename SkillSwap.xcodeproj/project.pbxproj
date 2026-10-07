@@ -1,399 +1,628 @@
 // !$*UTF8*$!
 {
 	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 77;
+	classes = {};
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171DEF9C3075C90200832E4F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DEF9B3075C90200832E4F /* WidgetKit.framework */; };
-		171DEF9E3075C90200832E4F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DEF9D3075C90200832E4F /* SwiftUI.framework */; };
-		171DEFAF3075C90400832E4F /* SkillSwapWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB347AF069B9E0181D841D11 /* SkillSwapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB666E3D41D6CC81BD1C0F4A /* SkillSwapApp.swift */; };
+		7C82CFA13EBB21427D096AD0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49634F1FE56AEE83179EA577 /* CoreDataStack.swift */; };
+		17A3C1671B31739FC3D4BCF2 /* CoreDataSkillSwapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F927734BDD835BE957852FEF /* CoreDataSkillSwapRepository.swift */; };
+		354FE41C1C581F1A3BBAF38F /* DemoDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E296064B043D28F49AEBB0A /* DemoDataSeeder.swift */; };
+		A61B1EDF08E774B593533157 /* SkillCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E85A45470D3028AA11668FD /* SkillCategory.swift */; };
+		717146BD7DDA5A1289D57B38 /* SkillRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7356434375D0CCFCC38A9 /* SkillRequestStatus.swift */; };
+		CD23DAD7A342CC3C52532D1F /* SkillOfferStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D99306B2578DADC5C6344 /* SkillOfferStatus.swift */; };
+		25363FF0E43228AC6693AD27 /* SkillRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD84E7DF819E28B3AD43E50 /* SkillRequest.swift */; };
+		DED528016FFA1003F9A757A9 /* SkillOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B391B4C0B5C0A18585EE994 /* SkillOffer.swift */; };
+		2FBEA524B713A09EAEA934D2 /* SkillSwapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C45A23F08867DE10D6AEFF /* SkillSwapRepository.swift */; };
+		E6B1B63365E247817AD1465A /* CreateSkillRequestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65947932CC465EA5ED9646C9 /* CreateSkillRequestUseCase.swift */; };
+		78DA286527336F3E8C1BDADB /* BrowseOpenSkillRequestsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC351DC32C7F325CC38F5C7F /* BrowseOpenSkillRequestsUseCase.swift */; };
+		AB4042C9E334025E661896FF /* GetMySkillRequestsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26091715C198382F7D15DF4F /* GetMySkillRequestsUseCase.swift */; };
+		BCECFB0D546BD4CC2BF22C0E /* GetOffersForRequestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7160D86EDB5AC7E134012A7F /* GetOffersForRequestUseCase.swift */; };
+		C35F24E68FBDE95A6B3505C2 /* GetIncomingOffersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D8CE23EE7C38F094BB4CF /* GetIncomingOffersUseCase.swift */; };
+		D05FB99B2ED84C6282DDD0C6 /* SubmitSkillOfferUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7312B09F99D507B4E39171D1 /* SubmitSkillOfferUseCase.swift */; };
+		510F766265F9517D82279C2F /* AcceptSkillOfferUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2ED59C3C716597465B985C /* AcceptSkillOfferUseCase.swift */; };
+		C598F536B2E2852EF1B58799 /* CloseSkillRequestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572C3B2ED98C7094794753C /* CloseSkillRequestUseCase.swift */; };
+		16AB14FC2A6AA65A1849E1F8 /* CategoryPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F048DDB7D864B935A60B070 /* CategoryPill.swift */; };
+		2E1AC0EC79DF140E9CF03E5C /* StatusCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50820956CE2765E1721EC1DE /* StatusCapsule.swift */; };
+		2DBCE76C46806D548783B1F7 /* ExchangeRequestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED3F9FAF801A85BDCE9FF05 /* ExchangeRequestCard.swift */; };
+		FCEB59438491FC1253527A92 /* OfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA17415E910C64AA1BB7F3E /* OfferCard.swift */; };
+		02EC4F7990E59B55A3F6DFB1 /* SkillSwapEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3181E33E3132382BFB1D23AE /* SkillSwapEmptyState.swift */; };
+		E7503FA9EB380E922613584C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18157B13CF794F4B75D3C38 /* HomeViewModel.swift */; };
+		31DF4564835A17140C4EA1AE /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DE4C60ED7D8C2B3277485 /* ExploreViewModel.swift */; };
+		7019823578A040D11AF50865 /* CreateRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863FD998DA7724649DA4002 /* CreateRequestViewModel.swift */; };
+		6DEC98737400CC91194D5F96 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF5A0DBDEB00601DC91138B /* ActivityViewModel.swift */; };
+		AFE45410A55AA01027F614C0 /* RequestDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65A7D8D819E897909904FB /* RequestDetailViewModel.swift */; };
+		23B092C267A4A2DA58C5DDF8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD76C81EEF33734375C3231 /* RootView.swift */; };
+		724EB32F6A53EC0B666B54C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8E1A4388DBE42150F42457 /* HomeView.swift */; };
+		D836DEC9E8E0A33226A66DF3 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703939D0656965416E4DB38F /* ExploreView.swift */; };
+		995010748648C67E9FC69492 /* CreateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BA525A7CD6369602E6686 /* CreateRequestView.swift */; };
+		ED84A759D892D30D3D922244 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B71ABD02C7D71F567CD8219 /* ActivityView.swift */; };
+		70ED3B30BDD30857FA27AF2D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CB700319A84152B6F7D339 /* ProfileView.swift */; };
+		6C7651EA66B38CF0BE71590F /* RequestDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E5DBEB0A7982BD898C055 /* RequestDetailView.swift */; };
+		CDF5857B1A6A4B8F69915EDB /* ParticipantIdentityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86897E406463A12E40F94D51 /* ParticipantIdentityProvider.swift */; };
+		DE8495F9E937D86DBD0319D2 /* ProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDE41A0D4814430BEA6945 /* ProfileStore.swift */; };
+		CCE46CAADD9543B7A83DDBAD /* DateDisplayFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED776BDEAC464E9E7F248E /* DateDisplayFormatter.swift */; };
+		074AE4C24D4263A883746F46 /* SessionReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4986C6773E9CB89C71F89BA /* SessionReminderService.swift */; };
+		F93F0F72E7B9783C74492EFD /* SkillSwapTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B04275306ABE6028A48300 /* SkillSwapTheme.swift */; };
+		96101840D0F0FF69596176FF /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D84C6D098CE8590E7DCE76B /* DependencyContainer.swift */; };
+		F5A37117C4EC37E4DF452B32 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7189E3EF2BCAB4E450DDA /* ActionViewController.swift */; };
+		196D83FF3055AA0E7D864B94 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE93341F29C123B26BF4A8F /* NotificationViewController.swift */; };
+		E65D9FB5001A4B5E7BF8E1C1 /* TestSkillSwapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA94D5AA669471B4055F919 /* TestSkillSwapRepository.swift */; };
+		F9B0B1D045E6015DC3F56DB0 /* CreateSkillRequestUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A77D674BC6D5E3B1B93AA9F /* CreateSkillRequestUseCaseTests.swift */; };
+		8426F2C0703BBA12F49AEA11 /* BrowseOpenSkillRequestsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3186E06BC047AC99BD4C83A /* BrowseOpenSkillRequestsUseCaseTests.swift */; };
+		1C86629B16F2F0EB80CFF417 /* SubmitSkillOfferUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23387A466CB471EF80F2DB34 /* SubmitSkillOfferUseCaseTests.swift */; };
+		206C79978C4C1E2BCD12C885 /* AcceptSkillOfferUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F35E8DBC99974097F036AC /* AcceptSkillOfferUseCaseTests.swift */; };
+		A33C95D468CC8ECA7B406A73 /* CloseSkillRequestUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA7EB17D0FB5A44DD99565D /* CloseSkillRequestUseCaseTests.swift */; };
+		44A26C2EE60684E16D79FAA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E3500FA3031E67ABDC30140 /* Assets.xcassets */; };
+		B6171E07B1A324D53454A445 /* SkillSwapActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1C1045B681CC93ACFDD10E0C /* SkillSwapActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		80A33CD3FEA6BC59F25049BD /* SkillSwapNotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 71B5C07C36765532FF194098 /* SkillSwapNotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F20000000000000000000001 /* SkillSwapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* SkillSwapWidget.swift */; };
+		F20000000000000000000002 /* SkillSwapWidgetPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000005 /* SkillSwapWidgetPublisher.swift */; };
+		F20000000000000000000003 /* SkillSwapWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F10000000000000000000006 /* SkillSwapWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA0000000000000000000002 /* TestSkillSwapRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000001 /* TestSkillSwapRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		171DEEAA3075AEE700832E4F /* PBXContainerItemProxy */ = {
+		F133013230AAB13133C3C6A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 171DEE8F3075AEE400832E4F /* Project object */;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 171DEE963075AEE400832E4F;
+			remoteGlobalIDString = EBC6F0C86390D658CBE5DC96;
+			remoteInfo = SkillSwapActionExtension;
+		};
+		DCE1AD7591223D51A49951BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED80749987CFAB5551DAB471;
+			remoteInfo = SkillSwapNotificationContent;
+		};
+		58E524D1D0925A8860096319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE3FBD7A51C361D063370C7;
 			remoteInfo = SkillSwap;
 		};
-		171DEEB43075AEE700832E4F /* PBXContainerItemProxy */ = {
+		F80000000000000000000001 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 171DEE8F3075AEE400832E4F /* Project object */;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 171DEE963075AEE400832E4F;
-			remoteInfo = SkillSwap;
-		};
-		171DEFAD3075C90400832E4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 171DEE8F3075AEE400832E4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 171DEF983075C90200832E4F;
-			remoteInfo = SkillSwapWidgetExtension;
+			remoteGlobalIDString = F50000000000000000000001;
+			remoteInfo = SkillSwapWidget;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		171DEFB43075C90400832E4F /* Embed Foundation Extensions */ = {
+		6783B4C20C445DAEFE73AFF9 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				171DEFAF3075C90400832E4F /* SkillSwapWidgetExtension.appex in Embed Foundation Extensions */,
+				B6171E07B1A324D53454A445 /* SkillSwapActionExtension.appex in Embed App Extensions */,
+				F20000000000000000000003 /* SkillSwapWidget.appex in Embed App Extensions */,
+				80A33CD3FEA6BC59F25049BD /* SkillSwapNotificationContent.appex in Embed App Extensions */,
 			);
-			name = "Embed Foundation Extensions";
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		171DEE973075AEE400832E4F /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		171DEEA93075AEE700832E4F /* SkillSwapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillSwapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		171DEEB33075AEE700832E4F /* SkillSwapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillSwapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkillSwapWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		171DEF9B3075C90200832E4F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		171DEF9D3075C90200832E4F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		171DEFBB3075C9ED00832E4F /* SkillSwapWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillSwapWidgetExtension.entitlements; sourceTree = "<group>"; };
+		7D71FB789F3C32DF80E6AB36 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
+		01734B33411AE9E4B9D91E8F /* Build-Verification.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Build-Verification.md"; sourceTree = "<group>"; };
+		27DEE3963EF651EB3084E656 /* Code-Walkthrough.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Code-Walkthrough.md"; sourceTree = "<group>"; };
+		373227A797F7A3FF7BC1BB7E /* Git-Reconstruction-Plan.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Git-Reconstruction-Plan.md"; sourceTree = "<group>"; };
+		AA244B1194E52DA020B3A703 /* Required-Document-Outline.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Required-Document-Outline.md"; sourceTree = "<group>"; };
+		435CD32B78880BDDC3CAE8B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README.md"; sourceTree = "<group>"; };
+		BB666E3D41D6CC81BD1C0F4A /* SkillSwapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillSwapApp.swift"; sourceTree = "<group>"; };
+		3E3500FA3031E67ABDC30140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		F927734BDD835BE957852FEF /* CoreDataSkillSwapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataSkillSwapRepository.swift"; sourceTree = "<group>"; };
+		49634F1FE56AEE83179EA577 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStack.swift"; sourceTree = "<group>"; };
+		6E296064B043D28F49AEBB0A /* DemoDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoDataSeeder.swift"; sourceTree = "<group>"; };
+		4E85A45470D3028AA11668FD /* SkillCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillCategory.swift"; sourceTree = "<group>"; };
+		4B391B4C0B5C0A18585EE994 /* SkillOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillOffer.swift"; sourceTree = "<group>"; };
+		6F2D99306B2578DADC5C6344 /* SkillOfferStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillOfferStatus.swift"; sourceTree = "<group>"; };
+		3CD84E7DF819E28B3AD43E50 /* SkillRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillRequest.swift"; sourceTree = "<group>"; };
+		04E7356434375D0CCFCC38A9 /* SkillRequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillRequestStatus.swift"; sourceTree = "<group>"; };
+		05C45A23F08867DE10D6AEFF /* SkillSwapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillSwapRepository.swift"; sourceTree = "<group>"; };
+		AE2ED59C3C716597465B985C /* AcceptSkillOfferUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AcceptSkillOfferUseCase.swift"; sourceTree = "<group>"; };
+		FC351DC32C7F325CC38F5C7F /* BrowseOpenSkillRequestsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseOpenSkillRequestsUseCase.swift"; sourceTree = "<group>"; };
+		D572C3B2ED98C7094794753C /* CloseSkillRequestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloseSkillRequestUseCase.swift"; sourceTree = "<group>"; };
+		65947932CC465EA5ED9646C9 /* CreateSkillRequestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateSkillRequestUseCase.swift"; sourceTree = "<group>"; };
+		C41D8CE23EE7C38F094BB4CF /* GetIncomingOffersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetIncomingOffersUseCase.swift"; sourceTree = "<group>"; };
+		26091715C198382F7D15DF4F /* GetMySkillRequestsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMySkillRequestsUseCase.swift"; sourceTree = "<group>"; };
+		7160D86EDB5AC7E134012A7F /* GetOffersForRequestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetOffersForRequestUseCase.swift"; sourceTree = "<group>"; };
+		7312B09F99D507B4E39171D1 /* SubmitSkillOfferUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubmitSkillOfferUseCase.swift"; sourceTree = "<group>"; };
+		8F048DDB7D864B935A60B070 /* CategoryPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryPill.swift"; sourceTree = "<group>"; };
+		7ED3F9FAF801A85BDCE9FF05 /* ExchangeRequestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExchangeRequestCard.swift"; sourceTree = "<group>"; };
+		4DA17415E910C64AA1BB7F3E /* OfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfferCard.swift"; sourceTree = "<group>"; };
+		3181E33E3132382BFB1D23AE /* SkillSwapEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillSwapEmptyState.swift"; sourceTree = "<group>"; };
+		50820956CE2765E1721EC1DE /* StatusCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatusCapsule.swift"; sourceTree = "<group>"; };
+		ADF5A0DBDEB00601DC91138B /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewModel.swift"; sourceTree = "<group>"; };
+		1863FD998DA7724649DA4002 /* CreateRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRequestViewModel.swift"; sourceTree = "<group>"; };
+		8B1DE4C60ED7D8C2B3277485 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExploreViewModel.swift"; sourceTree = "<group>"; };
+		E18157B13CF794F4B75D3C38 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel.swift"; sourceTree = "<group>"; };
+		7E65A7D8D819E897909904FB /* RequestDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestDetailViewModel.swift"; sourceTree = "<group>"; };
+		0B71ABD02C7D71F567CD8219 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityView.swift"; sourceTree = "<group>"; };
+		109BA525A7CD6369602E6686 /* CreateRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateRequestView.swift"; sourceTree = "<group>"; };
+		703939D0656965416E4DB38F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExploreView.swift"; sourceTree = "<group>"; };
+		3B8E1A4388DBE42150F42457 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
+		E6CB700319A84152B6F7D339 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView.swift"; sourceTree = "<group>"; };
+		D24E5DBEB0A7982BD898C055 /* RequestDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestDetailView.swift"; sourceTree = "<group>"; };
+		AFD76C81EEF33734375C3231 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView.swift"; sourceTree = "<group>"; };
+		A5ED776BDEAC464E9E7F248E /* DateDisplayFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateDisplayFormatter.swift"; sourceTree = "<group>"; };
+		6D84C6D098CE8590E7DCE76B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer.swift"; sourceTree = "<group>"; };
+		86897E406463A12E40F94D51 /* ParticipantIdentityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParticipantIdentityProvider.swift"; sourceTree = "<group>"; };
+		E4FDE41A0D4814430BEA6945 /* ProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileStore.swift"; sourceTree = "<group>"; };
+		E4986C6773E9CB89C71F89BA /* SessionReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionReminderService.swift"; sourceTree = "<group>"; };
+		A4B04275306ABE6028A48300 /* SkillSwapTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillSwapTheme.swift"; sourceTree = "<group>"; };
+		DBD7189E3EF2BCAB4E450DDA /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionViewController.swift"; sourceTree = "<group>"; };
+		569D7541AB3A94E79A2E4F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+		2629B985A26FA87D721FE469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+		2DE93341F29C123B26BF4A8F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationViewController.swift"; sourceTree = "<group>"; };
+		C7F35E8DBC99974097F036AC /* AcceptSkillOfferUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AcceptSkillOfferUseCaseTests.swift"; sourceTree = "<group>"; };
+		A3186E06BC047AC99BD4C83A /* BrowseOpenSkillRequestsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseOpenSkillRequestsUseCaseTests.swift"; sourceTree = "<group>"; };
+		EEA7EB17D0FB5A44DD99565D /* CloseSkillRequestUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloseSkillRequestUseCaseTests.swift"; sourceTree = "<group>"; };
+		1A77D674BC6D5E3B1B93AA9F /* CreateSkillRequestUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateSkillRequestUseCaseTests.swift"; sourceTree = "<group>"; };
+		23387A466CB471EF80F2DB34 /* SubmitSkillOfferUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubmitSkillOfferUseCaseTests.swift"; sourceTree = "<group>"; };
+		3BA94D5AA669471B4055F919 /* TestSkillSwapRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestSkillSwapRepository.swift"; sourceTree = "<group>"; };
+		595C479D7AC91F29089D5228 /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1045B681CC93ACFDD10E0C /* SkillSwapActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = SkillSwapActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		71B5C07C36765532FF194098 /* SkillSwapNotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = SkillSwapNotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ACD4FCE2926083C83034463 /* SkillSwapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillSwapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10000000000000000000001 /* SkillSwapWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapWidget.swift; sourceTree = "<group>"; };
+		F10000000000000000000002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10000000000000000000003 /* SkillSwapWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillSwapWidget.entitlements; sourceTree = "<group>"; };
+		F10000000000000000000004 /* SkillSwap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillSwap.entitlements; sourceTree = "<group>"; };
+		F10000000000000000000005 /* SkillSwapWidgetPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapWidgetPublisher.swift; sourceTree = "<group>"; };
+		F10000000000000000000006 /* SkillSwapWidget.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = SkillSwapWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0000000000000000000001 /* TestSkillSwapRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSkillSwapRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		171DEFB03075C90400832E4F /* Exceptions for "SkillSwapWidget" folder in "SkillSwapWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 171DEF983075C90200832E4F /* SkillSwapWidgetExtension */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+/* Begin PBXFrameworksBuildPhase section */
+		B94B2BBEC395CAD5D754F865 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		DBB37C1012FC8749A0F71C05 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		20BFD38EB5A51ABE4328AC6C /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		10AEAB8BD8D3E9F9BF44D026 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		F40000000000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		171DEE993075AEE400832E4F /* SkillSwap */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SkillSwap;
+/* Begin PBXGroup section */
+		3B03968955E7881F83E4CACB = {
+			isa = PBXGroup;
+			children = (
+				6202B8B48CC13C357C7F6F77 /* Docs */,
+				0233F7F809899E6151C04332 /* SkillSwap */,
+				D551E4CD358833B42C167A3F /* SkillSwapActionExtension */,
+				98EE5AB3E347E9C1FE3812A9 /* SkillSwapNotificationContent */,
+				F30000000000000000000001 /* SkillSwapWidget */,
+				FF0374ADB7DB20E9E6C9C3FB /* SkillSwapTests */,
+				7D71FB789F3C32DF80E6AB36 /* .gitignore */,
+				435CD32B78880BDDC3CAE8B4 /* README.md */,
+				021F2B7F3E0C61452C987484 /* Products */,
+			);
 			sourceTree = "<group>";
 		};
-		171DEEAC3075AEE700832E4F /* SkillSwapTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SkillSwapTests;
+		6202B8B48CC13C357C7F6F77 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				01734B33411AE9E4B9D91E8F /* Build-Verification.md */,
+				27DEE3963EF651EB3084E656 /* Code-Walkthrough.md */,
+				373227A797F7A3FF7BC1BB7E /* Git-Reconstruction-Plan.md */,
+				AA244B1194E52DA020B3A703 /* Required-Document-Outline.md */,
+			);
+			path = "Docs";
 			sourceTree = "<group>";
 		};
-		171DEEB63075AEE700832E4F /* SkillSwapUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SkillSwapUITests;
+		0233F7F809899E6151C04332 /* SkillSwap */ = {
+			isa = PBXGroup;
+			children = (
+				AF41ED1067DDF021EE87F48C /* App */,
+				0C3D1C47EF1C5AD53673D2B3 /* Data */,
+				0CA13315E81BF9570242D8E1 /* Domain */,
+				6C81F529657903A9A6CCB62D /* Presentation */,
+				5D92ADD364286CA11FB5F369 /* Support */,
+				3E3500FA3031E67ABDC30140 /* Assets.xcassets */,
+				F10000000000000000000004 /* SkillSwap.entitlements */,
+			);
+			path = "SkillSwap";
 			sourceTree = "<group>";
 		};
-		171DEF9F3075C90200832E4F /* SkillSwapWidget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				171DEFB03075C90400832E4F /* Exceptions for "SkillSwapWidget" folder in "SkillSwapWidgetExtension" target */,
+		AF41ED1067DDF021EE87F48C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB666E3D41D6CC81BD1C0F4A /* SkillSwapApp.swift */,
+			);
+			path = "App";
+			sourceTree = "<group>";
+		};
+		0C3D1C47EF1C5AD53673D2B3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F927734BDD835BE957852FEF /* CoreDataSkillSwapRepository.swift */,
+				49634F1FE56AEE83179EA577 /* CoreDataStack.swift */,
+				6E296064B043D28F49AEBB0A /* DemoDataSeeder.swift */,
+			);
+			path = "Data";
+			sourceTree = "<group>";
+		};
+		0CA13315E81BF9570242D8E1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4AC2E15F11D9580EAC48C5BB /* Models */,
+				DE67D1D208BCEFCE8332BF07 /* Repositories */,
+				A3DC5E44F12452930658A8CB /* UseCases */,
+			);
+			path = "Domain";
+			sourceTree = "<group>";
+		};
+		4AC2E15F11D9580EAC48C5BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E85A45470D3028AA11668FD /* SkillCategory.swift */,
+				4B391B4C0B5C0A18585EE994 /* SkillOffer.swift */,
+				6F2D99306B2578DADC5C6344 /* SkillOfferStatus.swift */,
+				3CD84E7DF819E28B3AD43E50 /* SkillRequest.swift */,
+				04E7356434375D0CCFCC38A9 /* SkillRequestStatus.swift */,
+			);
+			path = "Models";
+			sourceTree = "<group>";
+		};
+		DE67D1D208BCEFCE8332BF07 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				05C45A23F08867DE10D6AEFF /* SkillSwapRepository.swift */,
+			);
+			path = "Repositories";
+			sourceTree = "<group>";
+		};
+		A3DC5E44F12452930658A8CB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				AE2ED59C3C716597465B985C /* AcceptSkillOfferUseCase.swift */,
+				FC351DC32C7F325CC38F5C7F /* BrowseOpenSkillRequestsUseCase.swift */,
+				D572C3B2ED98C7094794753C /* CloseSkillRequestUseCase.swift */,
+				65947932CC465EA5ED9646C9 /* CreateSkillRequestUseCase.swift */,
+				C41D8CE23EE7C38F094BB4CF /* GetIncomingOffersUseCase.swift */,
+				26091715C198382F7D15DF4F /* GetMySkillRequestsUseCase.swift */,
+				7160D86EDB5AC7E134012A7F /* GetOffersForRequestUseCase.swift */,
+				7312B09F99D507B4E39171D1 /* SubmitSkillOfferUseCase.swift */,
+			);
+			path = "UseCases";
+			sourceTree = "<group>";
+		};
+		6C81F529657903A9A6CCB62D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CD4B9327FB30D51530C9EB57 /* Components */,
+				A01B0062CAFC1C4EB3666FD4 /* ViewModels */,
+				7D4EADEC1BF6DE068A1A4E33 /* Views */,
+			);
+			path = "Presentation";
+			sourceTree = "<group>";
+		};
+		CD4B9327FB30D51530C9EB57 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8F048DDB7D864B935A60B070 /* CategoryPill.swift */,
+				7ED3F9FAF801A85BDCE9FF05 /* ExchangeRequestCard.swift */,
+				4DA17415E910C64AA1BB7F3E /* OfferCard.swift */,
+				3181E33E3132382BFB1D23AE /* SkillSwapEmptyState.swift */,
+				50820956CE2765E1721EC1DE /* StatusCapsule.swift */,
+			);
+			path = "Components";
+			sourceTree = "<group>";
+		};
+		A01B0062CAFC1C4EB3666FD4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ADF5A0DBDEB00601DC91138B /* ActivityViewModel.swift */,
+				1863FD998DA7724649DA4002 /* CreateRequestViewModel.swift */,
+				8B1DE4C60ED7D8C2B3277485 /* ExploreViewModel.swift */,
+				E18157B13CF794F4B75D3C38 /* HomeViewModel.swift */,
+				7E65A7D8D819E897909904FB /* RequestDetailViewModel.swift */,
+			);
+			path = "ViewModels";
+			sourceTree = "<group>";
+		};
+		7D4EADEC1BF6DE068A1A4E33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B71ABD02C7D71F567CD8219 /* ActivityView.swift */,
+				109BA525A7CD6369602E6686 /* CreateRequestView.swift */,
+				703939D0656965416E4DB38F /* ExploreView.swift */,
+				3B8E1A4388DBE42150F42457 /* HomeView.swift */,
+				E6CB700319A84152B6F7D339 /* ProfileView.swift */,
+				D24E5DBEB0A7982BD898C055 /* RequestDetailView.swift */,
+				AFD76C81EEF33734375C3231 /* RootView.swift */,
+			);
+			path = "Views";
+			sourceTree = "<group>";
+		};
+		5D92ADD364286CA11FB5F369 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A5ED776BDEAC464E9E7F248E /* DateDisplayFormatter.swift */,
+				6D84C6D098CE8590E7DCE76B /* DependencyContainer.swift */,
+				86897E406463A12E40F94D51 /* ParticipantIdentityProvider.swift */,
+				E4FDE41A0D4814430BEA6945 /* ProfileStore.swift */,
+				E4986C6773E9CB89C71F89BA /* SessionReminderService.swift */,
+				A4B04275306ABE6028A48300 /* SkillSwapTheme.swift */,
+				F10000000000000000000005 /* SkillSwapWidgetPublisher.swift */,
+			);
+			path = "Support";
+			sourceTree = "<group>";
+		};
+		D551E4CD358833B42C167A3F /* SkillSwapActionExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DBD7189E3EF2BCAB4E450DDA /* ActionViewController.swift */,
+				569D7541AB3A94E79A2E4F54 /* Info.plist */,
+			);
+			path = "SkillSwapActionExtension";
+			sourceTree = "<group>";
+		};
+		98EE5AB3E347E9C1FE3812A9 /* SkillSwapNotificationContent */ = {
+			isa = PBXGroup;
+			children = (
+				2629B985A26FA87D721FE469 /* Info.plist */,
+				2DE93341F29C123B26BF4A8F /* NotificationViewController.swift */,
+			);
+			path = "SkillSwapNotificationContent";
+			sourceTree = "<group>";
+		};
+		F30000000000000000000001 /* SkillSwapWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F10000000000000000000001 /* SkillSwapWidget.swift */,
+				F10000000000000000000002 /* Info.plist */,
+				F10000000000000000000003 /* SkillSwapWidget.entitlements */,
 			);
 			path = SkillSwapWidget;
 			sourceTree = "<group>";
 		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		171DEE943075AEE400832E4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEEA63075AEE700832E4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEEB03075AEE700832E4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEF963075C90200832E4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				171DEF9E3075C90200832E4F /* SwiftUI.framework in Frameworks */,
-				171DEF9C3075C90200832E4F /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		171DEE8E3075AEE400832E4F = {
+		FF0374ADB7DB20E9E6C9C3FB /* SkillSwapTests */ = {
 			isa = PBXGroup;
 			children = (
-				171DEFBB3075C9ED00832E4F /* SkillSwapWidgetExtension.entitlements */,
-				171DEE993075AEE400832E4F /* SkillSwap */,
-				171DEEAC3075AEE700832E4F /* SkillSwapTests */,
-				171DEEB63075AEE700832E4F /* SkillSwapUITests */,
-				171DEF9F3075C90200832E4F /* SkillSwapWidget */,
-				171DEF9A3075C90200832E4F /* Frameworks */,
-				171DEE983075AEE400832E4F /* Products */,
+				C7F35E8DBC99974097F036AC /* AcceptSkillOfferUseCaseTests.swift */,
+				A3186E06BC047AC99BD4C83A /* BrowseOpenSkillRequestsUseCaseTests.swift */,
+				EEA7EB17D0FB5A44DD99565D /* CloseSkillRequestUseCaseTests.swift */,
+				1A77D674BC6D5E3B1B93AA9F /* CreateSkillRequestUseCaseTests.swift */,
+				23387A466CB471EF80F2DB34 /* SubmitSkillOfferUseCaseTests.swift */,
+				3BA94D5AA669471B4055F919 /* TestSkillSwapRepository.swift */,
+				FA0000000000000000000001 /* TestSkillSwapRepositoryTests.swift */,
 			);
+			path = "SkillSwapTests";
 			sourceTree = "<group>";
 		};
-		171DEE983075AEE400832E4F /* Products */ = {
+		021F2B7F3E0C61452C987484 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				171DEE973075AEE400832E4F /* SkillSwap.app */,
-				171DEEA93075AEE700832E4F /* SkillSwapTests.xctest */,
-				171DEEB33075AEE700832E4F /* SkillSwapUITests.xctest */,
-				171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */,
+				595C479D7AC91F29089D5228 /* SkillSwap.app */,
+				1C1045B681CC93ACFDD10E0C /* SkillSwapActionExtension.appex */,
+				71B5C07C36765532FF194098 /* SkillSwapNotificationContent.appex */,
+				F10000000000000000000006 /* SkillSwapWidget.appex */,
+				3ACD4FCE2926083C83034463 /* SkillSwapTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		171DEF9A3075C90200832E4F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				171DEF9B3075C90200832E4F /* WidgetKit.framework */,
-				171DEF9D3075C90200832E4F /* SwiftUI.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		171DEE963075AEE400832E4F /* SkillSwap */ = {
+		2FE3FBD7A51C361D063370C7 /* SkillSwap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 171DEEBD3075AEE700832E4F /* Build configuration list for PBXNativeTarget "SkillSwap" */;
+			buildConfigurationList = 6D8FB42965893BD12EA629B4 /* Build configuration list for PBXNativeTarget "SkillSwap" */;
 			buildPhases = (
-				171DEE933075AEE400832E4F /* Sources */,
-				171DEE943075AEE400832E4F /* Frameworks */,
-				171DEE953075AEE400832E4F /* Resources */,
-				171DEFB43075C90400832E4F /* Embed Foundation Extensions */,
+				DC5E3896F0D3EFF42B799260,
+				B94B2BBEC395CAD5D754F865,
+				E1D2DDA46DC414CA278CFC1C,
+				6783B4C20C445DAEFE73AFF9,
 			);
-			buildRules = (
-			);
+			buildRules = ();
 			dependencies = (
-				171DEFAE3075C90400832E4F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				171DEE993075AEE400832E4F /* SkillSwap */,
+				FEF48AD8B1160BA401CBFE2C /* PBXTargetDependency */,
+				F8ADE8DCDB25C7DF12AC9AB6 /* PBXTargetDependency */,
+				F90000000000000000000001 /* PBXTargetDependency */,
 			);
 			name = SkillSwap;
-			packageProductDependencies = (
-			);
 			productName = SkillSwap;
-			productReference = 171DEE973075AEE400832E4F /* SkillSwap.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 595C479D7AC91F29089D5228;
+			productType = com.apple.product-type.application;
 		};
-		171DEEA83075AEE700832E4F /* SkillSwapTests */ = {
+		EBC6F0C86390D658CBE5DC96 /* SkillSwapActionExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 171DEEC03075AEE700832E4F /* Build configuration list for PBXNativeTarget "SkillSwapTests" */;
+			buildConfigurationList = D95BB35C71171A9CB77AE195 /* Build configuration list for PBXNativeTarget "SkillSwapActionExtension" */;
 			buildPhases = (
-				171DEEA53075AEE700832E4F /* Sources */,
-				171DEEA63075AEE700832E4F /* Frameworks */,
-				171DEEA73075AEE700832E4F /* Resources */,
+				E838E32D4B44F11D291FD92B,
+				DBB37C1012FC8749A0F71C05,
+				B5849F8E277D7AA4FADE61FD,
 			);
-			buildRules = (
-			);
+			buildRules = ();
 			dependencies = (
-				171DEEAB3075AEE700832E4F /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				171DEEAC3075AEE700832E4F /* SkillSwapTests */,
+			name = SkillSwapActionExtension;
+			productName = SkillSwapActionExtension;
+			productReference = 1C1045B681CC93ACFDD10E0C;
+			productType = com.apple.product-type.app-extension;
+		};
+		ED80749987CFAB5551DAB471 /* SkillSwapNotificationContent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F6AFCAB0A9173955A2D52ED /* Build configuration list for PBXNativeTarget "SkillSwapNotificationContent" */;
+			buildPhases = (
+				6936B1C5ECE87CB590263933,
+				20BFD38EB5A51ABE4328AC6C,
+				E7EC90213053D14F46DD538E,
+			);
+			buildRules = ();
+			dependencies = (
+			);
+			name = SkillSwapNotificationContent;
+			productName = SkillSwapNotificationContent;
+			productReference = 71B5C07C36765532FF194098;
+			productType = com.apple.product-type.app-extension;
+		};
+		F50000000000000000000001 /* SkillSwapWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F60000000000000000000001 /* Build configuration list for PBXNativeTarget "SkillSwapWidget" */;
+			buildPhases = (
+				F40000000000000000000001,
+				F40000000000000000000002,
+				F40000000000000000000003,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = SkillSwapWidget;
+			productName = SkillSwapWidget;
+			productReference = F10000000000000000000006;
+			productType = com.apple.product-type.app-extension;
+		};
+		45C98D5FCE3016A4889B25F4 /* SkillSwapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3ABA344610D530E77AA32DF /* Build configuration list for PBXNativeTarget "SkillSwapTests" */;
+			buildPhases = (
+				C7D86128548076323A469FBD,
+				10AEAB8BD8D3E9F9BF44D026,
+				5F523DB4A4219AD634364FB9,
+			);
+			buildRules = ();
+			dependencies = (
+				D7FE7EAFD5AB27AB600F94D2 /* PBXTargetDependency */,
 			);
 			name = SkillSwapTests;
-			packageProductDependencies = (
-			);
 			productName = SkillSwapTests;
-			productReference = 171DEEA93075AEE700832E4F /* SkillSwapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		171DEEB23075AEE700832E4F /* SkillSwapUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 171DEEC33075AEE700832E4F /* Build configuration list for PBXNativeTarget "SkillSwapUITests" */;
-			buildPhases = (
-				171DEEAF3075AEE700832E4F /* Sources */,
-				171DEEB03075AEE700832E4F /* Frameworks */,
-				171DEEB13075AEE700832E4F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				171DEEB53075AEE700832E4F /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				171DEEB63075AEE700832E4F /* SkillSwapUITests */,
-			);
-			name = SkillSwapUITests;
-			packageProductDependencies = (
-			);
-			productName = SkillSwapUITests;
-			productReference = 171DEEB33075AEE700832E4F /* SkillSwapUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		171DEF983075C90200832E4F /* SkillSwapWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 171DEFB13075C90400832E4F /* Build configuration list for PBXNativeTarget "SkillSwapWidgetExtension" */;
-			buildPhases = (
-				171DEF953075C90200832E4F /* Sources */,
-				171DEF963075C90200832E4F /* Frameworks */,
-				171DEF973075C90200832E4F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				171DEF9F3075C90200832E4F /* SkillSwapWidget */,
-			);
-			name = SkillSwapWidgetExtension;
-			packageProductDependencies = (
-			);
-			productName = SkillSwapWidgetExtension;
-			productReference = 171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
+			productReference = 3ACD4FCE2926083C83034463;
+			productType = com.apple.product-type.bundle.unit-test;
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		171DEE8F3075AEE400832E4F /* Project object */ = {
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					171DEE963075AEE400832E4F = {
-						CreatedOnToolsVersion = 26.2;
-					};
-					171DEEA83075AEE700832E4F = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 171DEE963075AEE400832E4F;
-					};
-					171DEEB23075AEE700832E4F = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 171DEE963075AEE400832E4F;
-					};
-					171DEF983075C90200832E4F = {
-						CreatedOnToolsVersion = 26.2;
-					};
+					2FE3FBD7A51C361D063370C7 = {CreatedOnToolsVersion = 16.0; SystemCapabilities = { com.apple.ApplicationGroups.iOS = { enabled = 1; }; }; };
+					EBC6F0C86390D658CBE5DC96 = {CreatedOnToolsVersion = 16.0; };
+					ED80749987CFAB5551DAB471 = {CreatedOnToolsVersion = 16.0; };
+					45C98D5FCE3016A4889B25F4 = {CreatedOnToolsVersion = 16.0; };
+					F50000000000000000000001 = {CreatedOnToolsVersion = 16.0; SystemCapabilities = { com.apple.ApplicationGroups.iOS = { enabled = 1; }; }; };
 				};
 			};
-			buildConfigurationList = 171DEE923075AEE400832E4F /* Build configuration list for PBXProject "SkillSwap" */;
+			buildConfigurationList = B21C1D195CCB6F2828E1C10C /* Build configuration list for PBXProject "SkillSwap" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 171DEE8E3075AEE400832E4F;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = 171DEE983075AEE400832E4F /* Products */;
+			knownRegions = (en, Base);
+			mainGroup = 3B03968955E7881F83E4CACB;
+			productRefGroup = 021F2B7F3E0C61452C987484 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				171DEE963075AEE400832E4F /* SkillSwap */,
-				171DEEA83075AEE700832E4F /* SkillSwapTests */,
-				171DEEB23075AEE700832E4F /* SkillSwapUITests */,
-				171DEF983075C90200832E4F /* SkillSwapWidgetExtension */,
+				2FE3FBD7A51C361D063370C7 /* SkillSwap */,
+				EBC6F0C86390D658CBE5DC96 /* SkillSwapActionExtension */,
+				ED80749987CFAB5551DAB471 /* SkillSwapNotificationContent */,
+				F50000000000000000000001 /* SkillSwapWidget */,
+				45C98D5FCE3016A4889B25F4 /* SkillSwapTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		171DEE953075AEE400832E4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEEA73075AEE700832E4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEEB13075AEE700832E4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEF973075C90200832E4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+		E1D2DDA46DC414CA278CFC1C /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+			44A26C2EE60684E16D79FAA1 /* Assets.xcassets in Resources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+		B5849F8E277D7AA4FADE61FD /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		E7EC90213053D14F46DD538E /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		5F523DB4A4219AD634364FB9 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		F40000000000000000000003 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		171DEE933075AEE400832E4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEEA53075AEE700832E4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEEAF3075AEE700832E4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		171DEF953075C90200832E4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+		DC5E3896F0D3EFF42B799260 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			CB347AF069B9E0181D841D11 /* SkillSwapApp.swift in Sources */,
+			7C82CFA13EBB21427D096AD0 /* CoreDataStack.swift in Sources */,
+			17A3C1671B31739FC3D4BCF2 /* CoreDataSkillSwapRepository.swift in Sources */,
+			354FE41C1C581F1A3BBAF38F /* DemoDataSeeder.swift in Sources */,
+			A61B1EDF08E774B593533157 /* SkillCategory.swift in Sources */,
+			717146BD7DDA5A1289D57B38 /* SkillRequestStatus.swift in Sources */,
+			CD23DAD7A342CC3C52532D1F /* SkillOfferStatus.swift in Sources */,
+			25363FF0E43228AC6693AD27 /* SkillRequest.swift in Sources */,
+			DED528016FFA1003F9A757A9 /* SkillOffer.swift in Sources */,
+			2FBEA524B713A09EAEA934D2 /* SkillSwapRepository.swift in Sources */,
+			E6B1B63365E247817AD1465A /* CreateSkillRequestUseCase.swift in Sources */,
+			78DA286527336F3E8C1BDADB /* BrowseOpenSkillRequestsUseCase.swift in Sources */,
+			AB4042C9E334025E661896FF /* GetMySkillRequestsUseCase.swift in Sources */,
+			BCECFB0D546BD4CC2BF22C0E /* GetOffersForRequestUseCase.swift in Sources */,
+			C35F24E68FBDE95A6B3505C2 /* GetIncomingOffersUseCase.swift in Sources */,
+			D05FB99B2ED84C6282DDD0C6 /* SubmitSkillOfferUseCase.swift in Sources */,
+			510F766265F9517D82279C2F /* AcceptSkillOfferUseCase.swift in Sources */,
+			C598F536B2E2852EF1B58799 /* CloseSkillRequestUseCase.swift in Sources */,
+			16AB14FC2A6AA65A1849E1F8 /* CategoryPill.swift in Sources */,
+			2E1AC0EC79DF140E9CF03E5C /* StatusCapsule.swift in Sources */,
+			2DBCE76C46806D548783B1F7 /* ExchangeRequestCard.swift in Sources */,
+			FCEB59438491FC1253527A92 /* OfferCard.swift in Sources */,
+			02EC4F7990E59B55A3F6DFB1 /* SkillSwapEmptyState.swift in Sources */,
+			E7503FA9EB380E922613584C /* HomeViewModel.swift in Sources */,
+			31DF4564835A17140C4EA1AE /* ExploreViewModel.swift in Sources */,
+			7019823578A040D11AF50865 /* CreateRequestViewModel.swift in Sources */,
+			6DEC98737400CC91194D5F96 /* ActivityViewModel.swift in Sources */,
+			AFE45410A55AA01027F614C0 /* RequestDetailViewModel.swift in Sources */,
+			23B092C267A4A2DA58C5DDF8 /* RootView.swift in Sources */,
+			724EB32F6A53EC0B666B54C5 /* HomeView.swift in Sources */,
+			D836DEC9E8E0A33226A66DF3 /* ExploreView.swift in Sources */,
+			995010748648C67E9FC69492 /* CreateRequestView.swift in Sources */,
+			ED84A759D892D30D3D922244 /* ActivityView.swift in Sources */,
+			70ED3B30BDD30857FA27AF2D /* ProfileView.swift in Sources */,
+			6C7651EA66B38CF0BE71590F /* RequestDetailView.swift in Sources */,
+			CDF5857B1A6A4B8F69915EDB /* ParticipantIdentityProvider.swift in Sources */,
+			DE8495F9E937D86DBD0319D2 /* ProfileStore.swift in Sources */,
+			CCE46CAADD9543B7A83DDBAD /* DateDisplayFormatter.swift in Sources */,
+			074AE4C24D4263A883746F46 /* SessionReminderService.swift in Sources */,
+			F93F0F72E7B9783C74492EFD /* SkillSwapTheme.swift in Sources */,
+			96101840D0F0FF69596176FF /* DependencyContainer.swift in Sources */,
+			F20000000000000000000002 /* SkillSwapWidgetPublisher.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+		E838E32D4B44F11D291FD92B /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			F5A37117C4EC37E4DF452B32 /* ActionViewController.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+		6936B1C5ECE87CB590263933 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			196D83FF3055AA0E7D864B94 /* NotificationViewController.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+		C7D86128548076323A469FBD /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			E65D9FB5001A4B5E7BF8E1C1 /* TestSkillSwapRepository.swift in Sources */,
+			FA0000000000000000000002 /* TestSkillSwapRepositoryTests.swift in Sources */,
+			F9B0B1D045E6015DC3F56DB0 /* CreateSkillRequestUseCaseTests.swift in Sources */,
+			8426F2C0703BBA12F49AEA11 /* BrowseOpenSkillRequestsUseCaseTests.swift in Sources */,
+			1C86629B16F2F0EB80CFF417 /* SubmitSkillOfferUseCaseTests.swift in Sources */,
+			206C79978C4C1E2BCD12C885 /* AcceptSkillOfferUseCaseTests.swift in Sources */,
+			A33C95D468CC8ECA7B406A73 /* CloseSkillRequestUseCaseTests.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+		F40000000000000000000001 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			F20000000000000000000001 /* SkillSwapWidget.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		171DEEAB3075AEE700832E4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 171DEE963075AEE400832E4F /* SkillSwap */;
-			targetProxy = 171DEEAA3075AEE700832E4F /* PBXContainerItemProxy */;
-		};
-		171DEEB53075AEE700832E4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 171DEE963075AEE400832E4F /* SkillSwap */;
-			targetProxy = 171DEEB43075AEE700832E4F /* PBXContainerItemProxy */;
-		};
-		171DEFAE3075C90400832E4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 171DEF983075C90200832E4F /* SkillSwapWidgetExtension */;
-			targetProxy = 171DEFAD3075C90400832E4F /* PBXContainerItemProxy */;
-		};
+		FEF48AD8B1160BA401CBFE2C /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = EBC6F0C86390D658CBE5DC96 /* SkillSwapActionExtension */; targetProxy = F133013230AAB13133C3C6A5 /* PBXContainerItemProxy */; };
+		F8ADE8DCDB25C7DF12AC9AB6 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = ED80749987CFAB5551DAB471 /* SkillSwapNotificationContent */; targetProxy = DCE1AD7591223D51A49951BE /* PBXContainerItemProxy */; };
+		D7FE7EAFD5AB27AB600F94D2 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 2FE3FBD7A51C361D063370C7 /* SkillSwap */; targetProxy = 58E524D1D0925A8860096319 /* PBXContainerItemProxy */; };
+		F90000000000000000000001 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = F50000000000000000000001 /* SkillSwapWidget */; targetProxy = F80000000000000000000001 /* PBXContainerItemProxy */; };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		171DEEBB3075AEE700832E4F /* Debug */ = {
+		47EFF43A6359370474D7A094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION_AGGRESSIVE = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -422,42 +651,36 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		171DEEBC3075AEE700832E4F /* Release */ = {
+		67AAAD1DEC654799F04FB724 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION_AGGRESSIVE = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -486,235 +709,267 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				ENABLE_NS_ASSERTIONS = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		171DEEBE3075AEE700832E4F /* Debug */ = {
+		B8D64C3B8874BA551F8C0DA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SkillSwap;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Debug;
 		};
-		171DEEBF3075AEE700832E4F /* Release */ = {
+		4C50B2CFA3E43ECC5422F9AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SkillSwap;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};
-		171DEEC13075AEE700832E4F /* Debug */ = {
+		53B14496DABFAA443954D7AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				INFOPLIST_FILE = SkillSwapActionExtension/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3.ActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+			};
+			name = Debug;
+		};
+		E209D06BCE67D10885319BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				INFOPLIST_FILE = SkillSwapActionExtension/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3.ActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+			};
+			name = Release;
+		};
+		2F66226140FD781F5252AC3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				INFOPLIST_FILE = SkillSwapNotificationContent/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3.NotificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+			};
+			name = Debug;
+		};
+		2004F5CAF8DA681290A657DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				INFOPLIST_FILE = SkillSwapNotificationContent/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3.NotificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+			};
+			name = Release;
+		};
+		6C4F44D5012C26F347FB8740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkillSwap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkillSwap";
 			};
 			name = Debug;
 		};
-		171DEEC23075AEE700832E4F /* Release */ = {
+		A7EF4D0FAD53E2F2BE8D899B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkillSwap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkillSwap";
 			};
 			name = Release;
 		};
-		171DEEC43075AEE700832E4F /* Debug */ = {
+		F70000000000000000000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = SkillSwapWidget/SkillSwapWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SkillSwap;
-			};
-			name = Debug;
-		};
-		171DEEC53075AEE700832E4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SkillSwap;
-			};
-			name = Release;
-		};
-		171DEFB23075C90400832E4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SkillSwapWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				GENERATE_INFOPLIST_FILE = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SkillSwapWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SkillSwapWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwap.SkillSwapWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		171DEFB33075C90400832E4F /* Release */ = {
+		F70000000000000000000002 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SkillSwapWidgetExtension.entitlements;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = SkillSwapWidget/SkillSwapWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6536KAXGKR;
-				GENERATE_INFOPLIST_FILE = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SkillSwapWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SkillSwapWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwap.SkillSwapWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwapA3.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -723,52 +978,13 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		171DEE923075AEE400832E4F /* Build configuration list for PBXProject "SkillSwap" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				171DEEBB3075AEE700832E4F /* Debug */,
-				171DEEBC3075AEE700832E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		171DEEBD3075AEE700832E4F /* Build configuration list for PBXNativeTarget "SkillSwap" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				171DEEBE3075AEE700832E4F /* Debug */,
-				171DEEBF3075AEE700832E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		171DEEC03075AEE700832E4F /* Build configuration list for PBXNativeTarget "SkillSwapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				171DEEC13075AEE700832E4F /* Debug */,
-				171DEEC23075AEE700832E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		171DEEC33075AEE700832E4F /* Build configuration list for PBXNativeTarget "SkillSwapUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				171DEEC43075AEE700832E4F /* Debug */,
-				171DEEC53075AEE700832E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		171DEFB13075C90400832E4F /* Build configuration list for PBXNativeTarget "SkillSwapWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				171DEFB23075C90400832E4F /* Debug */,
-				171DEFB33075C90400832E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+		B21C1D195CCB6F2828E1C10C /* Build configuration list for PBXProject "SkillSwap" */ = {isa = XCConfigurationList; buildConfigurations = (47EFF43A6359370474D7A094 /* Debug */, 67AAAD1DEC654799F04FB724 /* Release */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		6D8FB42965893BD12EA629B4 /* Build configuration list for PBXNativeTarget "SkillSwap" */ = {isa = XCConfigurationList; buildConfigurations = (B8D64C3B8874BA551F8C0DA9 /* Debug */, 4C50B2CFA3E43ECC5422F9AD /* Release */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		D95BB35C71171A9CB77AE195 /* Build configuration list for PBXNativeTarget "SkillSwapActionExtension" */ = {isa = XCConfigurationList; buildConfigurations = (53B14496DABFAA443954D7AD /* Debug */, E209D06BCE67D10885319BFC /* Release */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		6F6AFCAB0A9173955A2D52ED /* Build configuration list for PBXNativeTarget "SkillSwapNotificationContent" */ = {isa = XCConfigurationList; buildConfigurations = (2F66226140FD781F5252AC3D /* Debug */, 2004F5CAF8DA681290A657DC /* Release */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		E3ABA344610D530E77AA32DF /* Build configuration list for PBXNativeTarget "SkillSwapTests" */ = {isa = XCConfigurationList; buildConfigurations = (6C4F44D5012C26F347FB8740 /* Debug */, A7EF4D0FAD53E2F2BE8D899B /* Release */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		F60000000000000000000001 /* Build configuration list for PBXNativeTarget "SkillSwapWidget" */ = {isa = XCConfigurationList; buildConfigurations = (F70000000000000000000001 /* Debug */, F70000000000000000000002 /* Release */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 	};
-	rootObject = 171DEE8F3075AEE400832E4F /* Project object */;
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
 }

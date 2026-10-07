@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		171DEF9C3075C90200832E4F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DEF9B3075C90200832E4F /* WidgetKit.framework */; };
+		171DEF9E3075C90200832E4F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171DEF9D3075C90200832E4F /* SwiftUI.framework */; };
+		171DEFAF3075C90400832E4F /* SkillSwapWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		171DEEAA3075AEE700832E4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +27,48 @@
 			remoteGlobalIDString = 171DEE963075AEE400832E4F;
 			remoteInfo = SkillSwap;
 		};
+		171DEFAD3075C90400832E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 171DEE8F3075AEE400832E4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 171DEF983075C90200832E4F;
+			remoteInfo = SkillSwapWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		171DEFB43075C90400832E4F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				171DEFAF3075C90400832E4F /* SkillSwapWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		171DEE973075AEE400832E4F /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		171DEEA93075AEE700832E4F /* SkillSwapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillSwapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		171DEEB33075AEE700832E4F /* SkillSwapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillSwapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SkillSwapWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		171DEF9B3075C90200832E4F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		171DEF9D3075C90200832E4F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		171DEFBB3075C9ED00832E4F /* SkillSwapWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillSwapWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		171DEFB03075C90400832E4F /* Exceptions for "SkillSwapWidget" folder in "SkillSwapWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 171DEF983075C90200832E4F /* SkillSwapWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		171DEE993075AEE400832E4F /* SkillSwap */ = {
@@ -43,6 +84,14 @@
 		171DEEB63075AEE700832E4F /* SkillSwapUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SkillSwapUITests;
+			sourceTree = "<group>";
+		};
+		171DEF9F3075C90200832E4F /* SkillSwapWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				171DEFB03075C90400832E4F /* Exceptions for "SkillSwapWidget" folder in "SkillSwapWidgetExtension" target */,
+			);
+			path = SkillSwapWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,15 +118,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		171DEF963075C90200832E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171DEF9E3075C90200832E4F /* SwiftUI.framework in Frameworks */,
+				171DEF9C3075C90200832E4F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		171DEE8E3075AEE400832E4F = {
 			isa = PBXGroup;
 			children = (
+				171DEFBB3075C9ED00832E4F /* SkillSwapWidgetExtension.entitlements */,
 				171DEE993075AEE400832E4F /* SkillSwap */,
 				171DEEAC3075AEE700832E4F /* SkillSwapTests */,
 				171DEEB63075AEE700832E4F /* SkillSwapUITests */,
+				171DEF9F3075C90200832E4F /* SkillSwapWidget */,
+				171DEF9A3075C90200832E4F /* Frameworks */,
 				171DEE983075AEE400832E4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +149,18 @@
 				171DEE973075AEE400832E4F /* SkillSwap.app */,
 				171DEEA93075AEE700832E4F /* SkillSwapTests.xctest */,
 				171DEEB33075AEE700832E4F /* SkillSwapUITests.xctest */,
+				171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		171DEF9A3075C90200832E4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				171DEF9B3075C90200832E4F /* WidgetKit.framework */,
+				171DEF9D3075C90200832E4F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +173,12 @@
 				171DEE933075AEE400832E4F /* Sources */,
 				171DEE943075AEE400832E4F /* Frameworks */,
 				171DEE953075AEE400832E4F /* Resources */,
+				171DEFB43075C90400832E4F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				171DEFAE3075C90400832E4F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				171DEE993075AEE400832E4F /* SkillSwap */,
@@ -163,6 +236,28 @@
 			productReference = 171DEEB33075AEE700832E4F /* SkillSwapUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		171DEF983075C90200832E4F /* SkillSwapWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 171DEFB13075C90400832E4F /* Build configuration list for PBXNativeTarget "SkillSwapWidgetExtension" */;
+			buildPhases = (
+				171DEF953075C90200832E4F /* Sources */,
+				171DEF963075C90200832E4F /* Frameworks */,
+				171DEF973075C90200832E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				171DEF9F3075C90200832E4F /* SkillSwapWidget */,
+			);
+			name = SkillSwapWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = SkillSwapWidgetExtension;
+			productReference = 171DEF993075C90200832E4F /* SkillSwapWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +279,9 @@
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = 171DEE963075AEE400832E4F;
 					};
+					171DEF983075C90200832E4F = {
+						CreatedOnToolsVersion = 26.2;
+					};
 				};
 			};
 			buildConfigurationList = 171DEE923075AEE400832E4F /* Build configuration list for PBXProject "SkillSwap" */;
@@ -203,6 +301,7 @@
 				171DEE963075AEE400832E4F /* SkillSwap */,
 				171DEEA83075AEE700832E4F /* SkillSwapTests */,
 				171DEEB23075AEE700832E4F /* SkillSwapUITests */,
+				171DEF983075C90200832E4F /* SkillSwapWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +322,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		171DEEB13075AEE700832E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171DEF973075C90200832E4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +359,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		171DEF953075C90200832E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +378,11 @@
 			isa = PBXTargetDependency;
 			target = 171DEE963075AEE400832E4F /* SkillSwap */;
 			targetProxy = 171DEEB43075AEE700832E4F /* PBXContainerItemProxy */;
+		};
+		171DEFAE3075C90400832E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 171DEF983075C90200832E4F /* SkillSwapWidgetExtension */;
+			targetProxy = 171DEFAD3075C90400832E4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6536KAXGKR;
@@ -427,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkillSwap/SkillSwap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6536KAXGKR;
@@ -538,6 +658,68 @@
 			};
 			name = Release;
 		};
+		171DEFB23075C90400832E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SkillSwapWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6536KAXGKR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkillSwapWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkillSwapWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwap.SkillSwapWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		171DEFB33075C90400832E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SkillSwapWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6536KAXGKR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkillSwapWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SkillSwapWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zadeelsaddik.SkillSwap.SkillSwapWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,6 +755,15 @@
 			buildConfigurations = (
 				171DEEC43075AEE700832E4F /* Debug */,
 				171DEEC53075AEE700832E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		171DEFB13075C90400832E4F /* Build configuration list for PBXNativeTarget "SkillSwapWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				171DEFB23075C90400832E4F /* Debug */,
+				171DEFB33075C90400832E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

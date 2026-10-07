@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
-import CoreData
 
 @main
+@MainActor
 struct SkillSwapApp: App {
-    let persistenceController = PersistenceController.shared
+    private let container: DependencyContainer
+
+    init() {
+        container = DependencyContainer()
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RootView(container: container)
         }
     }
 }

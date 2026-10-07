@@ -1,100 +1,127 @@
 # SkillSwap
 
-SkillSwap is an iOS MVP for students and young adults who need practical help but can offer a useful skill in return. Every request contains both sides of the exchange: what the person needs and what they can contribute.
+SkillSwap is an iOS app built around a simple idea: people often need help with something but may not want to pay for a full service, while at the same time they usually have a skill of their own that could be useful to someone else.
 
-## Domain problem
+The app lets a person post what they need help with and what they can offer in return. For example, someone might need help fixing a bike but be able to offer Photoshop help, tutoring, language practice or something similar.
 
-Small amounts of help such as tutoring, basic repairs, creative support, language practice, or technology assistance are often too minor to justify hiring a professional. At the same time, students and young adults frequently have useful skills they are willing to exchange. SkillSwap models this as a two-sided skill exchange rather than a paid marketplace.
+The main goal of SkillSwap is to make small skill exchanges easier to organise without turning everything into a normal money-based marketplace.
 
-Primary stakeholder: a university student or young adult with limited disposable income who occasionally needs practical help and has skills they can exchange.
+## Domain Context
+
+The main stakeholder for SkillSwap is a university student or young adult who may have limited disposable income but still has useful skills they can exchange with other people.
+
+The problem SkillSwap is trying to solve is the friction around small, practical exchanges. A person may need help with something relatively minor, but paying for a professional service may not make sense. At the same time, informal arrangements through messages or social media can be difficult to organise and keep track of.
+
+SkillSwap gives these exchanges a clearer structure. A request contains both the skill the person needs and the skill they are willing to offer in return. Other members can browse open requests and make an offer if they are interested in the exchange.
+
+## Main Features
+
+The app includes:
+
+- browsing currently open skill requests
+- creating a new request with a needed skill and an offered skill
+- viewing request details
+- submitting offers on another member's request
+- accepting an offer
+- closing a request when it is no longer available
+- viewing personal requests and incoming offers
+- persistent storage using Core Data
+- a Home Screen widget showing useful SkillSwap information
+- custom session reminder notifications
+- an Action Extension for bringing relevant content into SkillSwap
 
 ## Architecture
 
-The main application follows:
+SkillSwap uses a layered architecture based on MVVM with a separate Use Case layer.
 
-`SwiftUI Views -> ViewModels -> Use Cases -> SkillSwapRepository -> Core Data`
+The main flow is:
 
-Views and ViewModels never access Core Data directly. `SkillSwapRepository` is a protocol and the unit tests use `TestSkillSwapRepository`.
+`SwiftUI Views -> ViewModels -> Use Cases -> Repository -> Core Data`
 
-## Persistence
+The Views are responsible for presenting information and receiving user input. ViewModels prepare data for the interface and call the relevant Use Cases.
 
-The app uses Core Data with two related entities:
+The Use Case layer contains the business rules for the app. This includes operations such as creating a skill request, submitting an offer, accepting an offer and closing a request.
 
-- `ExchangeRequestEntity`
-- `ExchangeOfferEntity`
+The repository is defined through a protocol so that the app is not directly tied to Core Data. This also makes it possible to use a mock repository in unit tests.
 
-One request can contain many offers. Deleting a request cascades to its related offers. The open-board query uses predicates for request status, ownership, and optional skill category.
+The main domain models include `SkillRequest` and `SkillOffer`, along with domain-specific status and category types.
 
-## System extensions
+## Business Rules
 
-### WidgetKit Widget Extension
+Some of the main business rules enforced by the app are:
 
-The SkillSwap widget exposes useful exchange information on the Home Screen without requiring the user to open the main app. It shows active swaps, pending offers, and the current featured exchange.
+- a request must include both a skill that is needed and a skill being offered
+- a member cannot submit an offer on their own request
+- offers cannot be submitted to a closed request
+- only one offer can be accepted for a request
+- accepting an offer changes the state of the request and the related offers
+- errors are shown using domain-specific messages rather than generic technical errors
 
-It follows the assessment requirements directly:
+These rules are handled in the Use Case layer rather than directly inside the SwiftUI views.
 
-- reads data from the App Group shared container
-- supports `.systemSmall` and `.systemMedium`
-- the main app republishes the shared snapshot and calls `WidgetCenter.reloadTimelines` after request or offer data changes
+## Database Choice
+
+SkillSwap uses Core Data for its main persistent storage.
+
+Core Data was chosen because the app needs fast local persistence and structured relationships between requests and offers. The main data belongs to the app and needs to remain available between launches without depending on a network connection.
+
+The repository layer sits between Core Data and the rest of the application so that Views and ViewModels do not access Core Data directly.
+
+The main stored entities represent skill exchange requests and the offers attached to those requests.
+
+## System Extensions
+
+### WidgetKit Widget
+
+The SkillSwap widget gives the user useful information without requiring them to open the full app.
+
+It reads a lightweight snapshot of SkillSwap data from the shared App Group container and supports more than one widget size.
+
+The main app updates the shared widget data when relevant SkillSwap data changes and asks WidgetKit to refresh the widget timeline.
+
+This is useful for someone who wants to quickly check their current SkillSwap activity from the Home Screen.
 
 ### Notification Content Extension
 
-When a matched exchange produces a local session reminder, the notification content extension replaces the default notification body with a domain-specific SkillSwap view showing the exchange partner and the two sides of the swap.
+SkillSwap uses a Notification Content Extension for exchange session reminders.
 
-### SkillSwap Draft Action Extension
+When a user has matched with another person, the reminder notification can display exchange-specific information such as the other person's name, the skill the user needs and the skill they are offering.
 
-An additional Action Extension is included. It accepts selected text or a web URL from a compatible host app and helps turn the context into a two-sided SkillSwap request draft before returning formatted text to the host app.
+This gives the notification more useful context than a generic reminder.
+
+### Action Extension
+
+The Action Extension allows content from another app to be used as the starting point for a SkillSwap draft.
+
+This makes it easier to bring useful text into SkillSwap without manually switching between apps and retyping it.
+
+The extension communicates through the shared App Group container.
 
 ## App Group
 
-The project is configured with:
+The shared App Group used by the app and its extensions is:
 
 `group.com.zadeelsaddik.SkillSwapA3`
 
-Both the main `SkillSwap` target and `SkillSwapWidget` target include the same App Group entitlement.
+The App Group is used to share lightweight data between the main app and system extensions, especially the Widget and Action Extension.
 
-If this identifier is unavailable on the selected developer team, create a new App Group in Xcode and replace the identifier in:
+## Project Structure
 
-- `SkillSwap/SkillSwap.entitlements`
-- `SkillSwapWidget/SkillSwapWidget.entitlements`
-- `SkillSwap/Support/SkillSwapWidgetPublisher.swift`
-- `SkillSwapWidget/SkillSwapWidget.swift`
+The project is organised roughly as follows:
 
-## Main screens
-
-1. Home
-2. Explore
-3. Post a Swap
-4. Activity
-5. Profile
-6. Skill Request Detail
-
-## Core Use Cases
-
-- `CreateSkillRequestUseCase`
-- `BrowseOpenSkillRequestsUseCase`
-- `SubmitSkillOfferUseCase`
-- `AcceptSkillOfferUseCase`
-- `CloseSkillRequestUseCase`
-- `GetMySkillRequestsUseCase`
-- `GetIncomingOffersUseCase`
-- `GetOffersForRequestUseCase`
-
-## Tests
-
-The project contains more than the required five unit tests. Tests cover Use Case happy paths, boundary rules, domain errors, ownership rules, duplicate offers, category filtering, request matching, competing-offer decline behaviour, closing rules, and mock repository query behaviour.
-
-## Setup
-
-1. Open `SkillSwap.xcodeproj` in Xcode.
-2. Select the same Apple Developer Program team for `SkillSwap`, `SkillSwapWidget`, `SkillSwapActionExtension`, and `SkillSwapNotificationContent`.
-3. In Signing & Capabilities, confirm the `SkillSwap` and `SkillSwapWidget` targets both have the App Groups capability and the same identifier: `group.com.zadeelsaddik.SkillSwapA3`.
-4. Choose an iPhone simulator.
-5. Build and run the `SkillSwap` scheme.
-6. Add the SkillSwap widget from the simulator Home Screen and verify both Small and Medium sizes.
-7. Create or update a request/offer in the app and verify the widget updates.
-8. Run unit tests with `Command-U`.
-
-## Signing note
-
-The rubric-compliant WidgetKit implementation depends on an App Group. App Groups require a developer team that can provision the capability. A free Personal Team may show the App Group in red and cannot be used to demonstrate the shared-container flow end-to-end. The source code is intentionally configured to match the assessment criteria rather than bypass that requirement.
+```text
+SkillSwap/
+├── Domain/
+│   ├── Models/
+│   ├── Repositories/
+│   └── UseCases/
+├── Data/
+├── Presentation/
+│   ├── Components/
+│   ├── ViewModels/
+│   └── Views/
+├── Support/
+├── SkillSwapWidget/
+├── SkillSwapNotificationContent/
+├── SkillSwapActionExtension/
+└── SkillSwapTests/
